@@ -7,14 +7,15 @@
  *
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	char low;
+	char alpha = 'a';
 
-	for (low = 'a'; low <= 'z'; low++)
-		putchar(low);
-		putchar('\n');
-
-return (0);
+	while (alpha <= 'z')
+	{	
+		putchar (alpha);
+		alpha++;
+	}
+	putchar('/n');
+	return (0);
 }
