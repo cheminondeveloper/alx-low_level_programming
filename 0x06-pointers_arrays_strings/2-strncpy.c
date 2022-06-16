@@ -1,4 +1,4 @@
-nclude "holberton.h"
+#include "main.h"
 
 /**
  * _strncpy - a function that copys the strings.
