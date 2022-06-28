@@ -29,6 +29,7 @@ while (*(s2 + size2))
 
 /* a pointer pointed to the memory area allocation*/
 p = malloc((size1 + size2) + 1);
+
 if (p == NULL)
 	return (NULL);
 i = 0;
@@ -38,6 +39,7 @@ while (i < size1)
 	*(p + i) = *(s1 + i);
 			i++;
 }
+
 /* copying the second string */
 j = 0;
 while (j <= size2)
@@ -46,7 +48,5 @@ while (j <= size2)
 		j++;
 }
 /* the program return a pointer pointed */
-
 return (p);
-
 }
