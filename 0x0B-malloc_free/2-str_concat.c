@@ -2,51 +2,51 @@
 #include <stdlib.h>
 
 /**
- * str_concat - function to concatene two strings
- * @s1: the first string
- * @s2: the second string
- *
- * Return: a pointer to tha allocated memory Area.
+ * str_concat - A function that concatenates two strings
+ * @s1: An input pointer of the first string
+ * @s2: An input pointer of the second string
+ * Return: Apointer to concatened strings or NULL if it str is NULL
  */
 char *str_concat(char *s1, char *s2)
 {
-int size1 = 0;
-int size2 = 0;
-int i, j;
-char *p;
+	char *new_str, *starts1, *starts2;
+	int i = 0, lens1 = 0, lens2 = 0;
 
-if (s1 == NULL)
-	s1 = "";
-if (s2 == NULL)
-	s2 = "";
-
-/* calculate the length of string 1*/
-while (*(s1 + size1))
-	size1++;
-/* calculate the length of the string 2 */
-while (*(s2 + size2))
-	size2++
-
-/* a pointer pointed to the memory area allocation*/
-p = malloc((size1 + size2) + 1);
-
-if (p == NULL)
-	return (NULL);
-i = 0;
-/* copying the first string on the allocated memory*/
-while (i < size1)
-{
-	*(p + i) = *(s1 + i);
-			i++;
-}
-
-/* copying the second string */
-j = 0;
-while (j <= size2)
-{
-	*(p + j + size1) = *(s2 + j);
-		j++;
-}
-/* the program return a pointer pointed */
-return (p);
+	starts1 = s1;
+	starts2 = s2;
+	if (s1 == NULL)
+		s1 = "";
+	while (*s1)
+	{
+		lens1++;
+		s1++;
+	}
+	s1 = starts1;
+	if (s2 == NULL)
+		s2 = "";
+	while (*s2)
+	{
+		lens2++;
+		s2++;
+	}
+	s2 = starts2;
+	new_str = malloc(sizeof(char) * (lens1 + lens2 + 1));
+	starts1 = new_str;
+	if (new_str == NULL)
+		return (NULL);
+	for (; i < (lens1 + lens2); i++)
+	{
+		if (i < lens1)
+		{
+			new_str[i] = *s1;
+			s1++;
+		}
+		else
+		{
+			new_str[i] = *s2;
+			s2++;
+		}
+	}
+	new_str[i] = '\0';
+	return (starts1);
 }
