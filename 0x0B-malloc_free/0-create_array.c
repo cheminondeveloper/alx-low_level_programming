@@ -15,15 +15,15 @@ char *create_array(unsigned int size, char c)
 	unsigned int i;
 
 	if (size == 0)
-			return (NULL);
+		return (NULL);
 	pointer = malloc(sizeof(char) * size);
 	/*
 	 * Allocating a specific nb of bytes on the memory
 	 * and returning a pointer to the allocated memory
 	 */
 	if (pointer == NULL)
-			return (NULL);
-	else
+		return (NULL);
+else
 {
 	for (i = 0; i < size; i++)
 		pointer[i] = c;
